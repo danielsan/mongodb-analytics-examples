@@ -6,3 +6,24 @@ Please note: all tools/ scripts in this repo are released for use "AS IS" withou
 ## Release Notes
 
 This is an example referenced in [this blog on Hive and Spark](https://www.mongodb.com/blog/post/using-mongodb-hadoop-spark-part-1-introduction-setup).
+
+## Getting the code
+
+    mkdir SOME_DIRECORY
+    cd SOME_DIRECORY
+    git clone https://github.com/danielsan/mongodb-analytics-examples.git
+
+## Preparing everything
+The `setup.sh` script assumes that you already have curl, python, mongodb and Java installed in your system.
+
+Before running the [setup.sh](setup.sh) script I recommend you to see the source code and understand what is it going to do when you run it on your computer.
+
+    cd mongodb-analytics-examples && $SHELL ./setup.sh
+
+## Running the analysis with Spark
+
+Assuming your working directory (your current directory in your shell) is the `mongodb-analytics-examples` one
+
+    ./spark-ohlcbars-example.submit.sh
+
+Tha script will submit `spark-ohlcbars-example.py` to Spark using `spark-submit`
