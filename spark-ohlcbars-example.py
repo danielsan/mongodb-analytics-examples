@@ -5,7 +5,7 @@ conf = SparkConf().setAppName("databricks example")
 sc = SparkContext(conf=conf)
 
 # set up parameters for reading from MongoDB via Hadoop input format
-config = {"mongo.input.uri": "mongodb://localhost:27017/marketdata.minbars"}
+config = {"mongo.input.uri": "mongodb://localhost:27017/marketdata.minibars"}
 inputFormatClassName = "com.mongodb.hadoop.MongoInputFormat"
 
 # these values worked but others might as well
