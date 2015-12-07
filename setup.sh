@@ -1,4 +1,4 @@
-
+#!/bin/bash
 PROJECT_GIT_DIR=$(pwd)
 BASE_DIR=$(dirname $PROJECT_GIT_DIR)
 
