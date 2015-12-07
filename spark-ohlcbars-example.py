@@ -71,4 +71,4 @@ def ohlc(grouping):
 resultRDD = groupedBars.map(ohlc)
 
 # This causes ClassCastException apparently because of an issue in Spark logged as SPARK-5361.  Should write to MongoDB but could not test.
-# resultRDD.saveAsNewAPIHadoopFile("file:///placeholder", outputFormatClassName, None, None, None, None, config)
+resultRDD.saveAsNewAPIHadoopFile("file:///placeholder", outputFormatClassName, None, None, None, None, config)
