@@ -21,7 +21,7 @@ HADOOP_GIT_DIR=$BASE_DIR/mongodb-hadoop.git
 time git clone git@github.com:mongodb/mongo-hadoop.git $HADOOP_GIT_DIR
 echo
 
-echo "##### Cloning MongoDB Hadoop Connector Project"
+echo "##### Patching MongoDB Hadoop Connector Project due to a bug"
 patch $HADOOP_GIT_DIR/core/src/main/java/com/mongodb/hadoop/util/MongoConfigUtil.java $PROJECT_GIT_DIR/com_mongodb_hadoop_util_MongoConfigUtil.java.patch
 echo
 
