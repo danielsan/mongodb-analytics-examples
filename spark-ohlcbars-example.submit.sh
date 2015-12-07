@@ -1,4 +1,4 @@
-JARS_DIR=jarz
+JARS_DIR=jars
 
 MONGO_DRIVER_JAR=$(ls $JARS_DIR/mongodb-driver*jar)
 HADOOP_JAR=$(ls $JARS_DIR/mongo-hadoop-core*.jar)
