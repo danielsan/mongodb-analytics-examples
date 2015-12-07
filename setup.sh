@@ -6,7 +6,13 @@ cd $BASE_DIR
 
 # getting spark from git repo
 SPARK_GIT_DIR=$BASE_DIR/spark.git
-git clone git://github.com/apache/spark.git $SPARK_GIT_DIR
+time git clone git://github.com/apache/spark.git $SPARK_GIT_DIR
+echo
+
+echo "##### Building SPARK instance"
+cd $SPARK_GIT_DIR
+time build/mvn -DskipTests clean package
+echo
 
 #getting mongodb-hadoop from
 HADOOP_GIT_DIR=$BASE_DIR/mongodb-hadoop.git
