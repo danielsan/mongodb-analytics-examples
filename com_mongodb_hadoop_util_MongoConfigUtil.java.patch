@@ -1,0 +1,19 @@
+diff --git a/core/src/main/java/com/mongodb/hadoop/util/MongoConfigUtil.java b/core/src/main/java/com/mongodb/hadoop/util/MongoConfigUtil.java
+index 17d03b8..092feab 100644
+--- a/core/src/main/java/com/mongodb/hadoop/util/MongoConfigUtil.java
++++ b/core/src/main/java/com/mongodb/hadoop/util/MongoConfigUtil.java
+@@ -990,12 +990,13 @@ public final class MongoConfigUtil {
+             MongoClientURI uri = URI_MAP.get().remove(client);
+             if (uri != null) {
+                 MongoClient remove;
++                client.close();
+                 remove = CLIENTS.get().remove(uri);
+                 if (remove != client) {
+                     throw new IllegalStateException("different clients found");
+                 }
+             }
+-            client.close();
++            //client.close();
+     }
+     
+     private static MongoClient getMongoClient(final MongoClientURI uri) throws UnknownHostException {
