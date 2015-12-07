@@ -20,10 +20,14 @@ git clone git@github.com:mongodb/mongo-hadoop.git $HADOOP_GIT_DIR
 cd $HADOOP_GIT_DIR
 ./gradlew jar
 
-# getting the project
-cd $BASE_DIR
-PROJECT_GIT_DIR=$BASE_DIR/mongodb-analytics-examples
-git clone git@github.com:danielsan/mongodb-analytics-examples.git $PROJECT_GIT_DIR
+echo "##### Cloning MongoDB Hadoop Connector Project"
+patch $HADOOP_GIT_DIR/core/src/main/java/com/mongodb/hadoop/util/MongoConfigUtil.java $PROJECT_GIT_DIR/com_mongodb_hadoop_util_MongoConfigUtil.java.patch
+echo
+
+echo "##### Building MongoDB Hadoop Connector JARS"
+cd $HADOOP_GIT_DIR
+time ./gradlew jar
+echo
 
 # Dependency jars
 cd $PROJECT_GIT_DIR
