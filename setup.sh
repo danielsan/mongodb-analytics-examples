@@ -18,7 +18,7 @@ echo
 #getting mongodb-hadoop from
 echo "##### Cloning MongoDB Hadoop Connector Project"
 HADOOP_GIT_DIR=$BASE_DIR/mongodb-hadoop.git
-git clone git@github.com:mongodb/mongo-hadoop.git $HADOOP_GIT_DIR
+time git clone git@github.com:mongodb/mongo-hadoop.git $HADOOP_GIT_DIR
 echo
 
 echo "##### Cloning MongoDB Hadoop Connector Project"
@@ -43,7 +43,7 @@ echo "##### Downloading the sample data"
 TEMP_DIR=./tmp
 TEMP_FILE=mstf.csv
 mkdir $TEMP_DIR
-curl http://www.barchartmarketdata.com/data-samples/$TEMP_FILE > $TEMP_DIR/$TEMP_FILE
+time curl http://www.barchartmarketdata.com/data-samples/$TEMP_FILE > $TEMP_DIR/$TEMP_FILE
 echo
 
 DB_NAME=marketdata
