@@ -45,15 +45,19 @@ def ohlc(grouping):
 		if i == 0:
 			openTime = doc["Timestamp"]
 			openPrice = doc["Open"]
+
 		#assign min and max from the bar if appropriate
 		if doc["Low"] < low:
 			low = doc["Low"]
+
 		if doc["High"] > high:
 			high = doc["High"]
+
 		i = i + 1			
 		# take close of last bar
 		if i == len(group):
 			close = doc["Close"]
+
 	outputDoc = {"Symbol": groupKey[0], 
 		"Timestamp": openTime, 
 		"Open": openPrice,
