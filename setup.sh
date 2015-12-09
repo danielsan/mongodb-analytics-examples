@@ -18,7 +18,7 @@ echo
 #getting mongodb-hadoop from
 echo "##### Cloning MongoDB Hadoop Connector Project"
 HADOOP_GIT_DIR=$BASE_DIR/mongodb-hadoop.git
-time git clone git@github.com:mongodb/mongo-hadoop.git $HADOOP_GIT_DIR
+time git clone git://github.com/mongodb/mongo-hadoop.git $HADOOP_GIT_DIR
 echo
 
 echo "##### Patching MongoDB Hadoop Connector Project due to a bug"
