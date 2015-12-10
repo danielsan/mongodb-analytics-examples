@@ -1,6 +1,9 @@
 from pyspark import SparkContext, SparkConf
 import sys
 
+import pymongo_spark
+pymongo_spark.activate()
+
 conf = SparkConf().setAppName("databricks example")
 sc = SparkContext(conf=conf)
 
@@ -72,3 +75,4 @@ resultRDD = groupedBars.map(ohlc)
 
 # This causes ClassCastException apparently because of an issue in Spark logged as SPARK-5361.  Should write to MongoDB but could not test.
 # resultRDD.saveAsNewAPIHadoopFile("file:///placeholder", outputFormatClassName, None, None, None, None, config)
+resultRDD.saveToMongoDB(config["mongo.output.uri"])
